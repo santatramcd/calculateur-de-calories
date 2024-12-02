@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-outline-primary {
+        border-radius: 8px !important;
+      }
+
+      .input-ages {
+        font-size: 35px;
+        font-weight: 700;
+        width: 80px;
+        height: 60px;
+        text-align: center;
+        outline: none;
+        border: 1px solid #f5f5f5;
+        color: #333;
+      }
+
+      .div-ages {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        height: 165px;
+      }
+
+      .card {
+        min-height: 260px !important;
+      }
+
+      .p-actif {
+        color: #333;
+      }
+
+      .btn-calc {
+        background-image: linear-gradient(101deg, #e91e63, #f7681c);
+        padding: 10px 4rem;
+        border: none;
+        color: #fff;
+        border-radius: 18px;
+        font-weight: 700;
+      }
+
+      .div-calc {
+        display: flex;
+        justify-content: center;
+      }
+      .span-result {
+        color: rgb(54 165 143);
+        font-size: 25px;
+      }
+      .div-res {
+        font-weight: 700;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5 mb-5">
+      <div>
+        <h2 class="fs-2">Calcul des calories journalières</h2>
+        <p>
+          Pour effectuer un calcul exact, nous avons besoin de quelques infos
+          basiques de votre part.
+        </p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 text-center mt-5">
+            <div class="card p-3">
+              <div>
+                <h1 class="text-center fs-4">À quel genre appartenez-vous ?</h1>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div>
+                      <img
+                        src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"
+                        alt="male"
+                        width="80"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="weightUnit"
+                        id="homme"
+                        value="homme"
+                        checked
+                      />
+                      <label class="btn btn-outline-primary" for="homme"
+                        >Homme</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div>
+                      <img
+                        src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"
+                        alt="female"
+                        width="80"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="weightUnit"
+                        id="femme"
+                        value="femme"
+                      />
+                      <label class="btn btn-outline-primary" for="femme"
+                        >Femme</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center mt-5">
+            <div class="card p-3">
+              <div>
+                <h1 class="text-center fs-4">Quel âge avez-vous ?</h1>
+              </div>
+              <div class="div-ages">
+                <div>
+                  <input type="number" class="input-ages" placeholder="22" />
+                  <span>ans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center mt-5">
+            <div class="card p-3">
+              <div>
+                <h1 class="text-center fs-4">Combien mesurez-vous ?</h1>
+              </div>
+              <div class="div-ages">
+                <div>
+                  <input type="number" class="input-ages" placeholder="170" />
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center mt-5">
+            <div class="card p-3">
+              <div>
+                <h1 class="text-center fs-4">Combien pesez-vous ?</h1>
+              </div>
+              <div class="div-ages">
+                <div>
+                  <input type="number" class="input-ages" placeholder="60" />
+                  <span>kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center mt-5">
+            <div class="card p-3">
+              <div>
+                <h1 class="text-center fs-4">
+                  Évaluez votre activité journalière
+                </h1>
+              </div>
+              <div class="row">
+                <div class="col-lg-3">
+                  <div>
+                    <img
+                      src="https://assets.yazio.com/frontend/images/calculator/icon-sitting-on-chair.svg"
+                      alt="image"
+                      width="80"
+                    />
+                  </div>
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="heightUnit"
+                      id="peu"
+                      value="peu"
+                      checked
+                    />
+                    <label class="btn btn-outline-primary" for="peu"
+                      >Peu actif</label
+                    >
+                    <p class="p-actif">
+                      Assis la plupart du temps (par ex : travail de bureau)
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div>
+                    <img
+                      src="https://assets.yazio.com/frontend/images/calculator/icon-stand-up.svg"
+                      alt="image"
+                      width="80"
+                    />
+                  </div>
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="heightUnit"
+                      id="moyen"
+                      value="moyen"
+                    />
+                    <label class="btn btn-outline-primary" for="moyen"
+                      >Moyennement actif</label
+                    >
+                    <p class="p-actif">
+                      Debout la plupart du temps (par ex : professeur, caissier)
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div>
+                    <img
+                      src="https://assets.yazio.com/frontend/images/calculator/icon-walking.svg"
+                      alt="image"
+                      width="80"
+                    />
+                  </div>
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="heightUnit"
+                      id="actif"
+                      value="actif"
+                    />
+                    <label class="btn btn-outline-primary" for="actif"
+                      >actif</label
+                    >
+                    <p class="p-actif">
+                      Marche la plupart du temps (par ex : serveur, vendeur)
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div>
+                    <img
+                      src="https://assets.yazio.com/frontend/images/calculator/icon-manual-handling.svg"
+                      alt="image"
+                      width="80"
+                    />
+                  </div>
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="heightUnit"
+                      id="tres"
+                      value="tres"
+                    />
+                    <label class="btn btn-outline-primary" for="tres"
+                      >tres actif</label
+                    >
+                    <p class="p-actif">
+                      Activité très physique (par ex : ouvrier)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12 text-center mt-5">
+            <div class="card p-3">
+              <div class="mt-2">
+                <h1 class="text-center fs-4">
+                  Quel est votre objectif principal ?
+                </h1>
+              </div>
+              <div class="row mt-5">
+                <div class="col-lg-3">
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="Unit"
+                      id="perdre"
+                      value="perdre"
+                      checked
+                    />
+                    <label class="btn btn-outline-primary" for="perdre">
+                      <span>📉</span>Perdre de poids</label
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="Unit"
+                      id="maintenir"
+                      value="maintenir"
+                    />
+                    <label class="btn btn-outline-primary" for="maintenir"
+                      ><span>👀</span>Maintenir mon poids</label
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="Unit"
+                      id="prendre"
+                      value="prendre"
+                    />
+                    <label class="btn btn-outline-primary" for="prendre"
+                      ><span>📈</span>Prendre de poids</label
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="d-grid gap-3 mt-3">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="Unit"
+                      id="muscle"
+                      value="muscle"
+                    />
+                    <label class="btn btn-outline-primary" for="muscle"
+                      ><span>💪</span>Prendre de muscle</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-calc mt-5">
+        <button class="btn-calc">Calculer apport calorique</button>
+      </div>
+      <br /><br />
+      <h2 class="fs-5 mt-5 mb-5">
+        Voici les résultats de votre calcul des besoins caloriques et des
+        macronutriments par jour :
+      </h2>
+      <div class="d-grid gap-3">
+        <div class="p-2 bg-light border div-res">
+          IMC : <span class="span-result"><span id="imc">0</span></span>
+        </div>
+        <div class="p-2 bg-light border div-res">
+          Statut : <span class="span-result"><span id="statut">0</span></span>
+        </div>
+        <div class="p-2 bg-light border div-res">
+          kcalories/jour :
+          <span class="span-result"><span id="kcal">0</span>kcal</span>
+        </div>
+        <div class="p-2 bg-light border div-res">
+          Protéines (g) :
+          <span class="span-result"> <span id="proteines">0</span>g</span>
+        </div>
+        <div class="p-2 bg-light border div-res">
+          Glucides (g) :
+          <span class="span-result"> <span id="glucides">0</span>g</span>
+        </div>
+        <div class="p-2 bg-light border div-res">
+          Lipides (g) :
+          <span class="span-result"> <span id="lipides">0</span>g</span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        // Récupération des valeurs
+        const genre = document.querySelector(
+          "input[name='weightUnit']:checked"
+        ).value;
+        const age = parseFloat(
+          document.querySelector(".input-ages[placeholder='22']").value
+        );
+        const taille = parseFloat(
+          document.querySelector(".input-ages[placeholder='170']").value
+        );
+        const poids = parseFloat(
+          document.querySelector(".input-ages[placeholder='60']").value
+        );
+        const activite = document.querySelector(
+          "input[name='heightUnit']:checked"
+        ).value;
+        const objectif = document.querySelector(
+          "input[name='Unit']:checked"
+        ).value;
+
+        if (isNaN(age) || isNaN(taille) || isNaN(poids)) {
+          alert("Veuillez remplir tous les champs avec des valeurs valides !");
+          return;
+        }
+
+        // Calcul de l'IMC
+        const imc = (poids / (taille / 100) ** 2).toFixed(2);
+
+        // Détermination du statut IMC
+        let statut = "";
+        if (imc < 18.5) statut = "Insuffisance pondérale";
+        else if (imc < 24.9) statut = "Poids normal";
+        else if (imc < 29.9) statut = "Surpoids";
+        else statut = "Obésité";
+
+        // Calcul des besoins caloriques de base (BMR)
+        let bmr;
+        if (genre === "homme") {
+          bmr = 10 * poids + 6.25 * taille - 5 * age + 5;
+        } else {
+          bmr = 10 * poids + 6.25 * taille - 5 * age - 161;
+        }
+
+        // Multiplication par le niveau d'activité
+        const facteurActivite = {
+          peu: 1.2,
+          moyen: 1.375,
+          actif: 1.55,
+          tres: 1.725,
+        };
+        const caloriesMaintien = (bmr * facteurActivite[activite]).toFixed(0);
+
+        // Ajustement en fonction de l'objectif
+        const ajustement = {
+          perdre: -500,
+          maintenir: 0,
+          prendre: 500,
+          muscle: 300,
+        };
+        const caloriesCible = (
+          parseInt(caloriesMaintien) + ajustement[objectif]
+        ).toFixed(0);
+
+        // Calcul des macronutriments
+        const proteines = ((caloriesCible * 0.3) / 4).toFixed(0); // 30% des calories
+        const glucides = ((caloriesCible * 0.5) / 4).toFixed(0); // 50% des calories
+        const lipides = ((caloriesCible * 0.2) / 9).toFixed(0); // 20% des calories
+
+        // Affichage dans le tableau
+        document.getElementById("imc").textContent = imc;
+        document.getElementById("statut").textContent = statut;
+        document.getElementById("kcal").textContent = caloriesCible;
+        document.getElementById("proteines").textContent = proteines;
+        document.getElementById("glucides").textContent = glucides;
+        document.getElementById("lipides").textContent = lipides;
+      });
+    </script>
+  </body>
+</html>
