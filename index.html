@@ -44,6 +44,7 @@
         flex-wrap: wrap;
         align-content: center;
         height: 165px;
+        padding: 20px;
       }
 
       .card {
@@ -79,7 +80,7 @@
         color: #fff;
       }
       .div-res {
-        font-weight: 700;
+        font-weight: 500;
         font-size: 18px;
       }
       .three {
@@ -106,6 +107,7 @@
         height: 70px;
         font-size: 1.8rem;
         text-transform: capitalize;
+        font-weight: 500;
       }
       .section {
         width: 100%;
@@ -131,6 +133,9 @@
       .one span {
         height: 190px;
       }
+      .col-lg{
+        width: 50%;
+      }
     </style>
   </head>
   <body>
@@ -151,7 +156,7 @@
               <div>
                 <h1 class="text-center fs-4">À quel genre appartenez-vous ?</h1>
                 <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg">
                     <div>
                       <img
                         src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"
@@ -173,7 +178,7 @@
                       >
                     </div>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg">
                     <div>
                       <img
                         src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"
@@ -435,19 +440,19 @@
       </h2>
       <div class="d-grid gap-3">
         <div class="p-2 bg-light border div-res">
-          <strong>Calories/jour :</strong>
+          <span>Calories/jour :</span>
           <span class="span-result"><span id="kcal">0</span> kcal</span>
         </div>
         <div class="p-2 bg-light border div-res">
-          <strong>Protéines :</strong>
+          <span>Protéines :</span>
           <span class="span-result"><span id="proteines">0</span> g</span>
         </div>
         <div class="p-2 bg-light border div-res">
-          <strong>Glucides :</strong>
+          <span>Glucides :</span>
           <span class="span-result"><span id="glucides">0</span> g</span>
         </div>
         <div class="p-2 bg-light border div-res">
-          <strong>Lipides :</strong>
+          <span>Lipides :</span>
           <span class="span-result"><span id="lipides">0</span> g</span>
         </div>
       </div>
